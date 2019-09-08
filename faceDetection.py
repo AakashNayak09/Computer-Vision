@@ -18,7 +18,7 @@ x_train_pos = np.zeros((6000,324), dtype=np.float32)
 x_cv_pos = np.zeros((2000,324), dtype=np.float32)
 x_test_pos = np.zeros((2524,324), dtype=np.float32)
 
-mypath='/home/abhishek/Desktop/project/Grey_Photos_32X32'
+mypath='/home/akash/Desktop/project/Grey_Photos_32X32'
 onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
 images = numpy.empty(len(onlyfiles), dtype=object)
 for n in range(0, len(onlyfiles)):
@@ -42,12 +42,12 @@ for n in range(0, len(onlyfiles)):
         #print(n)
 #print(n)  
 #print(histogram[n,:])
-#cv2.imwrite('/home/abhishek/Desktop/project/resized_neg/image'+str(n)+'.jpg',images[n])
+#cv2.imwrite('/home/akash/Desktop/project/resized_neg/image'+str(n)+'.jpg',images[n])
 x_train_neg = np.zeros((4800,324), dtype=np.float32)
 x_cv_neg = np.zeros((1600,324), dtype=np.float32)
 x_test_neg = np.zeros((1560,324), dtype=np.float32)
 
-mypath='/home/abhishek/Desktop/project/resized_neg'
+mypath='/home/akash/Desktop/project/resized_neg'
 onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
 images = numpy.empty(len(onlyfiles), dtype=object)
 for n in range(0, len(onlyfiles)):
@@ -89,7 +89,7 @@ clf = SVC(probability=True,kernel='linear')
 clf.fit(x_train, y_train) 
 
 histogram = np.zeros((324,1), dtype=np.float32)
-gray=a.imread('/home/abhishek/Desktop/project/Caltech_WebFaces/pic00033.jpg', 0)
+gray=a.imread('/home/akash/Desktop/project/Caltech_WebFaces/pic00033.jpg', 0)
 
 #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 i=0
